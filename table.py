@@ -30,16 +30,17 @@ print("wating. . .")
 print(f"you have {len(table)} tables")
 names = True
 named = []
-while names:
-    name = input(str("Named For First One >>> "))
-    named.append(name)
-    q_name = input(str("do you want to named all your tables ? { yes } { no } >>> "))
-    if q_name.lower() == "yes":
-        for i in range(len(table)):
-            nameList = input(str(f"please named all of them start with {i+1}"))
-            named.append(nameList)
-    else:
-        names = False
+name = input(str("Named The File Please >>> "))
+named.append(name)
+if len(table) > 1:
+    while names:
+        q_name = input(str("do you want to named all your tables ? { yes } { no } >>> "))
+        if q_name.lower() == "yes":
+            for i in range(len(table)):
+                nameList = input(str(f"please named all of them start with {i+1}"))
+                named.append(nameList)
+        else:
+            names = False
 
 for i, tables in enumerate(table, start=1):
     file_name = f'.DataBase/unreadable{i}.csv'
